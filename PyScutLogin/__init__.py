@@ -3,8 +3,8 @@
 import requests
 from requests.adapters import HTTPAdapter
 import re
-import execjs
 import os
+from . import DES_JS
 
 
 def PyScutLogin(username: str, password: str, service: str = '') -> requests.session:
@@ -28,13 +28,8 @@ def PyScutLogin(username: str, password: str, service: str = '') -> requests.ses
     u = u.strip()
     p = p.strip()
 
-    basepath = os.path.abspath(__file__)
-    folder = os.path.dirname(basepath)
-    jspath = os.path.join(folder, 'des.js')
-    with open(jspath) as f:
-        ctx = execjs.compile(f.read())
     s = u+p+lt
-    rsa = ctx.call('strEnc', s, '1', '2', '3')
+    rsa = DES_JS.strenc(s, "1", "2", "3")
 
     # POST /cas/login
     data = {
