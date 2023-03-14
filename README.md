@@ -1,10 +1,10 @@
 # PyScutLogin
 
-这是个python的包（虽然里面只有一个函数），用来登录华南理工大学的统一认证平台。
+这是个 python 的包（虽然里面只有一个函数），用来登录华南理工大学的统一认证平台。
 
 ## 环境
 
-**python 3** + **PyExecJS**
+**python 3**
 
 ## 证书
 
@@ -20,17 +20,11 @@
 
 ## 它怎么用？
 
-首先你需要装PyExecJS包。`linux中使用PyExecJS包还需要JS环境，如nodejs`
+把 PyScutLogin 文件夹放进你项目的目录里。
 
-```shell
-pip install PyExecJS
-```
+你就可以在你的代码里**import PyScutLogin**了
 
-然后把PyScutLogin文件夹放进你项目的目录里。
-
-最后你就可以在你的代码里**import PyScutLogin**了
-
-------
+---
 
 调用包里面的函数会返回一个**requests.session**类，至于这个类怎么用，你可以上网谷歌/百度。
 
@@ -47,4 +41,3 @@ session = psl('username', 'password',
 # session.post(..., ...)  # POST操作
 # session.get(..., ...)  # GET操作
 ```
-
