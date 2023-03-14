@@ -1,6 +1,6 @@
 # 代码来自 https://bbs.kanxue.com/thread-224363.htm
 # 作者 wenglingok
-from DES import *
+from .DES import *
 
 
 def strenc(data, firstkey, secondkey, thirdkey):
